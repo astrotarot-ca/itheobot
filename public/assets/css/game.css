@@ -1,0 +1,10 @@
+section.board {
+    min-height: 1222px;
+}
+
+img.card {
+	position: absolute;
+	cursor: move;
+	width:66px;
+	z-index: auto;
+}
