@@ -3,7 +3,7 @@
 */
 iImgs = 17;         // number of cards in deck
 sCS = "133px";	    // card size on appear
-sCB = "000.jpg";   // cardback id
+sCB = '000.jpg';   // cardback id
 
 function populateArray(aCrds) {
 	for (var j=1;j<=17;j++) {
