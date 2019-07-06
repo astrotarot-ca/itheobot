@@ -8,7 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>EsoRobot Online - </title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/game.css">
+    
+    <title>EsoRobot Online - Zodiac Oracle Game</title>
   </head>
   <body>
     <div class="container">
@@ -55,23 +58,27 @@
               </ul>
             </div>
         </nav>
-      
+
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../../main.html">Home</a></li>
           <li class="breadcrumb-item"><a href="../main.html">Oracle</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Zodiac</li>
-          <li class="breadcrumb-item"><a href="game.html">Game</a></li>
+          <li class="breadcrumb-item"><a href="main.html">Zodiac</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Game</li>
         </ol>
       </nav>
-
+      
       <div class="jumbotron">
-        <h1 class="display-4">Zodiac Oracle</h1>
+        <h1 class="display-4">Zodiac Oracle Game</h1>
         <img class="img-thumbnail float-left mr-4" src="../../assets/images/zo-splash-1-1024.jpg" alt="" width="200" height="200">
-        <p class="lead">This game of oracle has foremost been created to study <strong>Astrology</strong> and I hope astrology students will be tempted to use it also. With 10 cards for the <strong>Planets</strong>, 12 cards for <strong>Constellations</strong>, and 12 cards for the <strong>Houses</strong>, the three card game is quite simple&mdash;pick one from each pile and have your revelation, or pull as many as you want.</p>
-        <p>For those unfamiliar with astrology it is still a very simple game. Pull one planet card, one constallation card, and one house card, and along the keywords of each card you'll have parts of a sentence that you be able to decipher.</p>
-        <hr class="my-4">
-        <a href="game.html" class="btn btn-primary">Open oracle game</a>
+        <p class="lead">Click on one of the yellow <b class="font-weight-bolder font-italic text-primary">Pull Card</b> buttons below to select a card from the virtual shuffled pile and to place it beneath this section. Once the yellow button is clicked, the card appears in the left upper corner of the section below in overturned mode. Click on the card to reveal its face side and drag it around. Once all desired cards are pulled, drag the cards by placing them in your favourite layout. You can add as many cards as you want.</p>
+        <!-- hr class="my-4" -->
+        <a name="pull-btn1" class="btn btn-warning font-weight-bold" style="200px" href="#pull-btn1" onclick="pullNextZoP('zo','000P.jpg','Game Card')">Pull a <strong>Planet</strong> Card</a>
+        <a name="pull-btn2" class="btn btn-warning font-weight-bold" style="200px" href="#pull-btn2" onclick="pullNextZoC('zo','000C.jpg','Game Card')">Pull a <strong>Constellation</strong> Card</a>
+        <a name="pull-btn3" class="btn btn-warning font-weight-bold" style="200px" href="#pull-btn3" onclick="pullNextZoH('zo','000H.jpg','Game Card')">Pull a <strong>House</strong> Card</a>
+        <!-- ========= MAIN GAME BOARD ========= -->
+        <section id="mainGameBoard" class="border my-4 board bg-light rounded border-dark"></section>
+        <p>(Russian Ouija images are public domain)</p>
       </div>
 
       <footer class="pt-4 my-md-5 pt-md-5 border-top">
@@ -119,5 +126,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Custom Javascript -->
+    <script src="../../assets/scripts/oracle/zo/game.main.js"></script>
+    <script src="../../assets/scripts/oracle/zo/base.js"></script>
   </body>
 </html>
