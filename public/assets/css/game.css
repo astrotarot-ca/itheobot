@@ -7,4 +7,5 @@ img.card {
 	cursor: move;
 	width:66px;
 	z-index: auto;
+	touch-action: none;
 }
