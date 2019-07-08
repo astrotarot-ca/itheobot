@@ -5,7 +5,7 @@ iImgs = 52;         // number of cards in deck
 sCB = "back.jpg";   // cardback id
 
 function populateArray(aCrds) {
-	for (var i=1;i<=10;i++) {
+	for (var i=2;i<=10;i++) {
 		aCrds.push("../../assets/images/cards/go/w300px/"+i+"S.png");
 		aCrds.push("../../assets/images/cards/go/w300px/"+i+"C.png");
 		aCrds.push("../../assets/images/cards/go/w300px/"+i+"H.png");
