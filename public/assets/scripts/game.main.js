@@ -91,3 +91,7 @@ function pullNext(sGameId,sCardBack,sImgAlt) {
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);
 }
+
+function refreshPage() {
+  document.location.reload();
+}

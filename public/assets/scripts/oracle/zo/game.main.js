@@ -126,3 +126,7 @@ function pullNextZoH(sGameId,sCardBackH,sImgAlt) {
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);
 }
+
+function refreshPage() {
+  document.location.reload();
+}
