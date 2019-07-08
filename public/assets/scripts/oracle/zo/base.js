@@ -1,7 +1,9 @@
+/*
+ *	Author: Serafim Junior Dos Santos Fagundes
+*/
 sCBP = "000P.jpg";
 sCBC = "000C.jpg";
 sCBH = "000H.jpg";
-sCS = "133px";
 iImgs = 34;
 
 function populateArray(iIndx,aCrds,sPref) {
@@ -12,11 +14,9 @@ function populateArray(iIndx,aCrds,sPref) {
 }
 
 $(function () {
-    // populate the array of images
 	aRndCrdsH = populateArray(12,aRndCrdsH,"Astroracle-M");
 	aRndCrdsC = populateArray(12,aRndCrdsC,"Astroracle-C");
 	aRndCrdsP = populateArray(10,aRndCrdsP,"Astroracle-P");
-    // shuffle the array
     aRndCrdsH = shuffle(aRndCrdsH);
 	aRndCrdsC = shuffle(aRndCrdsC);
 	aRndCrdsP = shuffle(aRndCrdsP);

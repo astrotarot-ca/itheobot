@@ -1,25 +1,20 @@
-//
-//
-//
+/*
+*	Author: Serafim Junior Dos Santos Fagundes
+*/
 var aRndCrdsH = new Array();
 var aRndCrdsC = new Array();
 var aRndCrdsP = new Array();
-var sCS;	// card size on appear
 var sCBP;	// cardback Planets
 var sCBC;	// cardback Constellations
 var sCBH;	// cardback HOuses
 var iImgsIdx = 0;    // card images index
 var iMrgnStrt; // margin start
-var iCrdMrgn; // card margin
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
-  // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
-    // And swap it with the current element.
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
@@ -38,8 +33,7 @@ function dragElement(elmnt) {
   
   elmnt.addEventListener("touchstart", dragStart, false);
   elmnt.addEventListener("touchend", dragEnd, false);
-  elmnt.addEventListener("touchmove", drag, false);
-  
+  elmnt.addEventListener("touchmove", drag, false);  
   elmnt.addEventListener("mousedown", dragStart, false);
   elmnt.addEventListener("mouseup", dragEnd, false);
   elmnt.addEventListener("mousemove", drag, false);
@@ -53,11 +47,9 @@ function dragElement(elmnt) {
       } else if (elmnt.src.includes(sCBH)) {
         elmnt.src = aRndCrdsH.shift();
       }
+      elmnt.style.zIndex+=1;
       iImgsIdx++;
 	  }
-  
-    elmnt.style.width = sCS;
-    elmnt.style.zIndex+=1;
   
     if (e.type === "touchstart") {
       initialX = e.touches[0].clientX - xOffset;
@@ -74,8 +66,7 @@ function dragElement(elmnt) {
   
   function dragEnd(e) {
     initialX = currentX;
-    initialY = currentY;
-  
+    initialY = currentY;  
     active = false;
   }
   
@@ -83,7 +74,7 @@ function dragElement(elmnt) {
     if (active) {
     
       e.preventDefault();
-    
+
       if (e.type === "touchmove") {
         currentX = e.touches[0].clientX - initialX;
         currentY = e.touches[0].clientY - initialY;
@@ -93,8 +84,7 @@ function dragElement(elmnt) {
       }
   
       xOffset = currentX;
-      yOffset = currentY;
-  
+      yOffset = currentY;  
       setTranslate(currentX, currentY, elmnt);
     }
   }  
@@ -105,43 +95,34 @@ function setTranslate(xPos, yPos, el) {
 }
 
 function pullNextZoP(sGameId,sCardBackP,sImgAlt) {
-
   oNewImg = new Image();
-  
   $(oNewImg).attr({
       src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBackP,
       alt: sImgAlt,
-      class: "card"
+      class: "card img-fluid"
   });
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);
-  
 }
 
 function pullNextZoC(sGameId,sCardBackC,sImgAlt) {
-
   oNewImg = new Image();
-  
   $(oNewImg).attr({
       src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBackC,
       alt: sImgAlt,
-      class: "card"
+      class: "card img-fluid"
   });
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);
-  
 }
 
 function pullNextZoH(sGameId,sCardBackH,sImgAlt) {
-
   oNewImg = new Image();
-  
   $(oNewImg).attr({
       src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBackH,
       alt: sImgAlt,
-      class: "card"
+      class: "card img-fluid"
   });
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);
-  
 }
