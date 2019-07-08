@@ -1,11 +1,13 @@
 /*
- *
+ *  Main code for a game in itheobot repository
+ *  URL: http://esorobot.online/public/main.html
+ *  Author: Serafim Junior Dos Santos Fagundes
+ *  Partially assembled with code examples found on the web. 
 */
 var aRndCrds = new Array();
 var iImgs;
-var iImgsIdx = 0;    // card images index
-var sCS;	// card size on appear
-var sCB;	// cardback
+var iImgsIdx = 0;           // card images index
+var sCB;	                  // cardback
 
 function dragElement(elmnt) {
   var active = false;
@@ -14,25 +16,20 @@ function dragElement(elmnt) {
   var initialX;
   var initialY;
   var xOffset = 0;
-  var yOffset = 0;
-  
+  var yOffset = 0;  
   elmnt.addEventListener("touchstart", dragStart, false);
   elmnt.addEventListener("touchend", dragEnd, false);
   elmnt.addEventListener("touchmove", drag, false);
-  
   elmnt.addEventListener("mousedown", dragStart, false);
   elmnt.addEventListener("mouseup", dragEnd, false);
   elmnt.addEventListener("mousemove", drag, false);
   
   function dragStart(e) {
     if (elmnt.src.includes(sCB) && iImgs>iImgsIdx) {
-        elmnt.src = aRndCrds.shift();
-        iImgsIdx++;
+      elmnt.src = aRndCrds.shift();
+      elmnt.style.zIndex+=1;
+      iImgsIdx++;
     }
-  
-    elmnt.style.width = sCS;
-    elmnt.style.zIndex+=1;
-  
     if (e.type === "touchstart") {
       initialX = e.touches[0].clientX - xOffset;
       initialY = e.touches[0].clientY - yOffset;
@@ -40,7 +37,6 @@ function dragElement(elmnt) {
       initialX = e.clientX - xOffset;
       initialY = e.clientY - yOffset;
     }
-  
     if (e.target === elmnt) {
       active = true;
     }
@@ -49,15 +45,12 @@ function dragElement(elmnt) {
   function dragEnd(e) {
     initialX = currentX;
     initialY = currentY;
-  
     active = false;
   }
   
   function drag(e) {
     if (active) {
-    
       e.preventDefault();
-    
       if (e.type === "touchmove") {
         currentX = e.touches[0].clientX - initialX;
         currentY = e.touches[0].clientY - initialY;
@@ -65,10 +58,8 @@ function dragElement(elmnt) {
         currentX = e.clientX - initialX;
         currentY = e.clientY - initialY;
       }
-  
       xOffset = currentX;
       yOffset = currentY;
-  
       setTranslate(currentX, currentY, elmnt);
     }
   }  
@@ -80,7 +71,6 @@ function setTranslate(xPos, yPos, el) {
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
-
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
@@ -93,11 +83,10 @@ function shuffle(array) {
   
 function pullNext(sGameId,sCardBack,sImgAlt) {
   oNewImg = new Image();
-  
   $(oNewImg).attr({
       src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBack,
       alt: sImgAlt,
-      class: "card"
+      class: "card img-fluid"
   });
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);

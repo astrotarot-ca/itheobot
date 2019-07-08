@@ -1,11 +1,13 @@
 section.board {
-    min-height: 1222px;
+	min-height: 999px;
+	height: auto;
 }
 
 img.card {
 	position: absolute;
 	cursor: move;
-	width:66px;
+	max-width:13%;
 	z-index: auto;
 	touch-action: none;
+	height: auto;
 }

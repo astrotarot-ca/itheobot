@@ -1,8 +1,7 @@
 /*
- *
+ *	Author: Serafim Junior Dos Santos Fagundes
 */
 iImgs = 78;         // number of cards in deck
-sCS = "133px";	    // card size on appear
 sCB = "cardback.jpg";   // cardback id
 
 function populateArray(aCrds) {
@@ -19,16 +18,6 @@ function populateArray(aCrds) {
 }
 
 $(function () {
-    // populate the array of images
     aRndCrds = populateArray(aRndCrds)
-    // shuffle the array
     aRndCrds = shuffle(aRndCrds);
-
-    // link the event functions to each image 
-/*
-    for (i=0; i<iImgs; i++) {
-        oImg =  aImgs[i];
-        dragElement(oImg);
-    }
-*/
 });
