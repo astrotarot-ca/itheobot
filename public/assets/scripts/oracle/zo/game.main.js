@@ -121,7 +121,7 @@ function pullNextZoH(sGameId,sCardBackH,sImgAlt) {
   $(oNewImg).attr({
       src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBackH,
       alt: sImgAlt,
-      class: "card img-fluid"
+      class: "card img-fluid rounded"
   });
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);

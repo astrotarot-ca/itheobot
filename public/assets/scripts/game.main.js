@@ -86,7 +86,7 @@ function pullNext(sGameId,sCardBack,sImgAlt) {
   $(oNewImg).attr({
       src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBack,
       alt: sImgAlt,
-      class: "card img-fluid"
+      class: "card img-fluid rounded"
   });
   dragElement(oNewImg);
   $("#mainGameBoard").append(oNewImg);
