@@ -25,10 +25,9 @@ function dragElement(elmnt) {
   elmnt.addEventListener("mousemove", drag, false);
   
   function dragStart(e) {
-    if (elmnt.src.includes(sCB) && iImgs>iImgsIdx) {
+    if (elmnt.src.includes(sCB)) {
       elmnt.src = aRndCrds.shift();
       elmnt.style.zIndex+=1;
-      iImgsIdx++;
     }
     if (e.type === "touchstart") {
       initialX = e.touches[0].clientX - xOffset;
@@ -81,15 +80,33 @@ function shuffle(array) {
   return array;
 }
   
+function resetTarotDeck(sType) {
+  aRndCrds = new Array();
+  if (sType=="AL") {
+    aRndCrds = populateDeckAL(aRndCrds);
+  } else if (sType=="MA") {
+    aRndCrds = populateDeckMA(aRndCrds);
+    
+  } else if (sType=="MI") {
+    aRndCrds = populateDeckMI(aRndCrds);
+  }
+  iImgs = aRndCrds.length;
+  iImgsIdx = 0;
+  aRndCrds = shuffle(aRndCrds);
+}
+
 function pullNext(sGameId,sCardBack,sImgAlt) {
-  oNewImg = new Image();
-  $(oNewImg).attr({
-      src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBack,
-      alt: sImgAlt,
-      class: "card img-fluid rounded"
-  });
-  dragElement(oNewImg);
-  $("#mainGameBoard").append(oNewImg);
+  if (iImgsIdx<iImgs) {
+    oNewImg = new Image();
+    $(oNewImg).attr({
+        src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBack,
+        alt: sImgAlt,
+        class: "card img-fluid rounded"
+    });
+    dragElement(oNewImg);
+    $("#mainGameBoard").append(oNewImg);
+    iImgsIdx++;
+  }
 }
 
 function refreshPage() {
