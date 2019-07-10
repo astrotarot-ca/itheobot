@@ -4,7 +4,7 @@ section.board {
 }
 
 img.card {
-	position: absolute;
+	float: left;
 	cursor: move;
 	max-width:13%;
 	z-index: auto;
