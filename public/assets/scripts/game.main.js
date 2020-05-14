@@ -99,7 +99,7 @@ function pullNext(sGameId,sCardBack,sImgAlt) {
   if (iImgsIdx<iImgs) {
     oNewImg = new Image();
     $(oNewImg).attr({
-        src: "../../assets/images/cards/"+sGameId+"/w300px/"+sCardBack,
+        src: "../../../assets/images/cards/"+sGameId+"/w300px/"+sCardBack,
         alt: sImgAlt,
         class: "card img-fluid rounded"
     });

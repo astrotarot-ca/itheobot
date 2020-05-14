@@ -6,7 +6,7 @@ sCB = '000.jpg';   // cardback id
 
 function populateArray(aCrds) {
 	for (var j=1;j<=22;j++) {
-		aCrds.push("../../assets/images/cards/rb/w300px/ro-c"+j+".jpg");
+		aCrds.push("../../../assets/images/cards/rb/w300px/ro-c"+j+".jpg");
 	}
 	return aCrds;
 }

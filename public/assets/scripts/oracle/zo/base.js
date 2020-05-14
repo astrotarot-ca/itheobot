@@ -8,7 +8,7 @@ iImgs = 34;
 
 function populateArray(iIndx,aCrds,sPref) {
 	for (var j=1;j<=iIndx;j++) {
-		aCrds.push("../../assets/images/cards/zo/w300px/"+sPref+j+".jpg");
+		aCrds.push("../../../assets/images/cards/zo/w300px/"+sPref+j+".jpg");
 	}
 	return aCrds;
 }
